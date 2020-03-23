@@ -1,0 +1,129 @@
+
+
+/*
+resets usually are margin, padding 0
+box sizing of ocurse. borderbox. 
+we want the roboto font (which is in google fonts, u plug it in, but u must manually put it in font family)
+
+
+body: 
+usually fontfamily, line-height. 
+
+when modifying the classes, ask yourself questions. Like container? Wha'ts the point of a container
+if we have content inside a container, and when we shrink the window, do we want the words to be cut off? or shirnk as wel?
+max-width: 960px normal
+margin: auto pushes it to the middle
+oveflow; hidden
+padding also pushes content in. 0 3rem pretty good
+
+What's a showcase? in oru code, the showcase is actually "the parent" of the container. 
+so we can set background. and color. 
+heights100vh
+position: relative.  using before selector to add overlay. that is very common
+the overlay has to be positioned absolute. absolute is relative to its first relative container....which is showcase. if not
+the body is container
+
+#showcase:before... beofre always needs content value so...
+u can do content: ''
+u can add the background: url. So that's interesting we already set a background variable. Yes u can have background
+and images this height and width thing both at 100 percent is extremely important. it doesn't show other wise. 
+
+to have all the way across and all the way up and down its height and width 100%. top: 0 left: 0
+and if the image is covering everything use the z-index. 
+*/
+
+:root {
+    /*overlay color is the color of the background when u open the hamburger tab */
+    --primary-color: rgba(13,110,139,0.75); /* little see through */
+    --secondary-color: rgba(229,148,0,0.9);
+    /* we an also put the speed stuff in the root too */
+    --overlay-color: rgba(24, 39, 51, 0.85);
+    --menu-speed: 0.75s;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.4;
+}
+
+.container {
+    max-width: 960px;
+    margin: auto;
+    overflow: hidden;
+    padding: 0 3rem;
+}
+
+#showcase {
+    background: var(--primary-color);
+    color: #fff;
+    height: 100vh;
+    position: relative;
+}
+
+#showcase:before {
+    content: '';
+    background: url('../img/showcase.jpg') no-repeat center center/cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+/* the rbga is what controls the transparency */
+
+/* if you want to center everything, we can make the showcase contents all a flexbox. 
+we decided to do it on the .showcase container (which si also with container but... showcase) and in it
+there are h1 and p stuff. so the h1 and p are gonna be flexxed. */
+#showcase .showcase-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+}
+
+/* the text will stay "up there" .... unless we do something
+so we added the height for the showcase which is 100vh. but the showcase container we need to set that too 100% of its parents
+
+*/
+
+/* now what are we mssing. Do we want to make p bigger, h1 igger? usually h1 is better bigger.
+
+*/
+#showcase h1 {
+    font-size: 4rem;
+}
+
+#showcase p {
+    font-size: 1.3rem;
+}
+
+/* did u forget about the BUTTON? 
+u always need inline block and border none. textdecoration.
+backgrounds. colors. padding 0.75 1.5 and usually need margin to "brign it down a bit"
+and also a transition
+transition *all/orwhateverlike...opacity *time *ease?
+*/
+.btn {
+    display: inline-block;
+    border: none;
+    background: var(--primary-color);
+    color: #fff;
+    text-decoration: none;
+    padding: 0.75rem 1.5rem;
+    margin-top: 1rem;
+    transition: opacity 1s ease-in-out;
+}
+.btn:hover {
+    opacity: 0.7s;
+}

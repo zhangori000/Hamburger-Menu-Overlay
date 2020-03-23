@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/menu.css">
+</head>
+<body>
+    <!-- I need... useless divs for soem reason....-->
+    <!-- I need to understand these div relationships....
+        Lets see what we have... we have a 
+        several classes. Menu-wrap, toggler, hamburger, and menu. 
+        menu-wrap and menu look very similar. the only difference being the WRAP. -->
+    <div class="menu-wrap">
+        <input type="checkbox" class="toggler">
+        <div class="hamburger"><div></div></div>
+        <div class="menu">
+            <div>
+                <div>
+                    <ul>
+                        <li><a href='#'>Home</a></li>
+                        <li><a href='#'>About</a></li>
+                        <li><a href='#'>Services</a></li>
+                        <li><a href='#'>Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- another class called showcase. What does a showcase do... welll.. it... showcases! -->
+    <!-- look more classes. We have now. container. but not done: showcase...container. So 
+        Container is a parent of showcase-container essentaiilly.... and we also have a btn class.-->
+    <header id="showcase">
+        <div class="container showcase-container">
+            <h1>Welcome</h1>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus, eligendi, optio accusamus, hic soluta ex iste corporis repellendus odio fugit at totam vel quae eos laudantium possimus error saepe nulla ab ducimus earum quidem esse tempore provident. Dolores, molestiae error!</p>
+            <a href="#" class="btn">Read More</a>
+        </div>
+    </header>
+</body>
+</html>
+
